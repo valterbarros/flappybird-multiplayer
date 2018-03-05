@@ -3,6 +3,7 @@
   "private": true,
   "dependencies": {
     "@rails/webpacker": "^3.3.0",
+    "actioncable": "^5.1.5",
     "normalize.css": "^7.0.0",
     "postcss-nested": "^3.0.0"
   },
