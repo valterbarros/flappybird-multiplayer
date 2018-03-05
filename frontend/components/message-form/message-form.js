@@ -1,5 +1,6 @@
 // we need to import sendMessage from our client/chat.js
 import { sendMessage } from "client/chat";
+import "./static/send-button.png";
 import "./message-form.css";
 
 function submitMessage(input) {
