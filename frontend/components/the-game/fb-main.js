@@ -10,6 +10,21 @@ import "./static/font_big_6.png";
 import "./static/font_big_7.png";
 import "./static/font_big_8.png";
 import "./static/font_big_9.png";
+import "./static/font_small_0.png";
+import "./static/font_small_1.png";
+import "./static/font_small_2.png";
+import "./static/font_small_3.png";
+import "./static/font_small_4.png";
+import "./static/font_small_5.png";
+import "./static/font_small_6.png";
+import "./static/font_small_7.png";
+import "./static/font_small_8.png";
+import "./static/font_small_9.png";
+import "./static/sounds/sfx_wing.ogg";
+import "./static/sounds/sfx_point.ogg";
+import "./static/sounds/sfx_hit.ogg";
+import "./static/sounds/sfx_die.ogg";
+import "./static/sounds/sfx_swooshing.ogg";
 import * as buzz from "./fb-buzz.min.js";
 import * as $ from "./fb-jquery.min.js";
 import "./fb-jquery.transit.min.js";
@@ -50,11 +65,11 @@ var replayclickable = false;
 
 // Definição dos sons
 var volume = 30;
-var soundJump = new buzz.sound("static/sounds/sfx_wing.ogg");
-var soundScore = new buzz.sound("static/sounds/sfx_point.ogg");
-var soundHit = new buzz.sound("static/sounds/sfx_hit.ogg");
-var soundDie = new buzz.sound("static/sounds/sfx_die.ogg");
-var soundSwoosh = new buzz.sound("static/sounds/sfx_swooshing.ogg");
+var soundJump = new buzz.sound(require("./static/sounds/sfx_wing.ogg"));
+var soundScore = new buzz.sound(require("./static/sounds/sfx_point.ogg"));
+var soundHit = new buzz.sound(require("./static/sounds/sfx_hit.ogg"));
+var soundDie = new buzz.sound(require("./static/sounds/sfx_die.ogg"));
+var soundSwoosh = new buzz.sound(require("./static/sounds/sfx_swooshing.ogg"));
 buzz.all().setVolume(volume);
 
 // Definição dos loops do jogo e dos canos
@@ -299,6 +314,7 @@ function setHighScore() {
 
 // Função para setar a medalha de acordo com a pontuação obtida
 function setMedal() {
+  var medal;
   var elemmedal = $("#medal");
   elemmedal.empty();
 
