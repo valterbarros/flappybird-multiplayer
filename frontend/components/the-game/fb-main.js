@@ -245,16 +245,6 @@ function gameloop() {
   }
 }
 
-// Permitindo os pulos pela barra de espaço
-$(document).keydown(function(e) {
-  // usando a barra de espaço
-  if (e.keyCode == 32) {
-    // pode usar o space para sair da página de replay e começar novamente
-    if (currentstate == states.ScoreScreen) $("#replay").click();
-    else screenClick();
-  }
-});
-
 // Função para passar o pulo e o som
 function playerJump() {
   velocity = jump;

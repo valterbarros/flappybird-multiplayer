@@ -17,6 +17,16 @@ setDoJumpCallback(playerJump);
 if ("ontouchstart" in window) $(document).on("touchstart", screenClick);
 else $(document).on("mousedown", screenClick);
 
+// Permitindo os pulos pela barra de espaço
+$(document).keydown(function(e) {
+  // usando a barra de espaço
+  if (e.keyCode == 32) {
+    // pode usar o space para sair da página de replay e começar novamente
+    if (currentstate == states.ScoreScreen) $("#replay").click();
+    else screenClick();
+  }
+});
+
 function screenClick() {
   if (currentstate == states.GameScreen) {
     doJump();
