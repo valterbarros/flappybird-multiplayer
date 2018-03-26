@@ -1,19 +1,33 @@
 import createChannel from "client/cable";
 
-let callback;
+const actions = {
+  DOJUMP: 'do_jump',
+  ADDNEWPLAYER: 'add_new_player'
+}
+
+let doJumpCallback, addNewPlayerCallback;
 
 const flappyBird = createChannel("FlappyBirdChannel", {
-  received() {
-    if (callback) callback();
+  received(data) {
+    if(data.action === actions.DOJUMP){
+      doJumpCallback();
+    }
+    if(data.action === actions.ADDNEWPLAYER){
+      addNewPlayerCallback();
+    }
   }
 });
 
 function doJump() {
-  flappyBird.perform("jump");
+  flappyBird.perform("do_jump");
 }
 
-function setCallback(fn) {
-  callback = fn;
+function setDoJumpCallback(fn) {
+  doJumpCallback = fn;
 }
 
-export { doJump, setCallback };
+function setAddNewPlayerCallback(fn) {
+  addNewPlayerCallback = fn;
+}
+
+export { doJump, setDoJumpCallback, setAddNewPlayerCallback };

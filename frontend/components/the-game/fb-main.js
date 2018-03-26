@@ -28,7 +28,6 @@ import "./static/sounds/sfx_swooshing.ogg";
 import * as buzz from "./fb-buzz.min.js";
 import * as $ from "./fb-jquery.min.js";
 import "./fb-jquery.transit.min.js";
-import { doJump, setCallback } from "client/flappy_bird";
 
 /* 
    /// DEFININDO AS VARIÁVEIS ////
@@ -38,19 +37,19 @@ import { doJump, setCallback } from "client/flappy_bird";
 var debugmode = false;
 
 // Objeto para congelar dependendo dos estados
-var states = Object.freeze({
+window.states = Object.freeze({
   SplashScreen: 0,
   GameScreen: 1,
   ScoreScreen: 2
 });
 
 // Definição das vars de lógica
-var currentstate;
+window.currentstate = 0;
 var gravity = 0.25;
-var velocity = 0;
+window.velocity = 0;
 var position = 180;
 var rotation = 0;
-var jump = -4.6;
+window.jump = -4.6;
 
 // Definição das vars da pontuação min e máxima
 var score = 0;
@@ -66,7 +65,7 @@ var replayclickable = false;
 
 // Definição dos sons
 var volume = 30;
-var soundJump = new buzz.sound(require("./static/sounds/sfx_wing.ogg"));
+const soundJump = new buzz.sound(require("components/the-game/static/sounds/sfx_wing.ogg"));
 var soundScore = new buzz.sound(require("./static/sounds/sfx_point.ogg"));
 var soundHit = new buzz.sound(require("./static/sounds/sfx_hit.ogg"));
 var soundDie = new buzz.sound(require("./static/sounds/sfx_die.ogg"));
@@ -255,18 +254,6 @@ $(document).keydown(function(e) {
     else screenClick();
   }
 });
-
-// Usar o mouse ou o teclado para começar
-if ("ontouchstart" in window) $(document).on("touchstart", screenClick);
-else $(document).on("mousedown", screenClick);
-
-function screenClick() {
-  if (currentstate == states.GameScreen) {
-    doJump();
-  } else if (currentstate == states.SplashScreen) {
-    startGame();
-  }
-}
 
 // Função para passar o pulo e o som
 function playerJump() {
@@ -515,4 +502,4 @@ var isIncompatible = {
   }
 };
 
-setCallback(playerJump);
+export { startGame }

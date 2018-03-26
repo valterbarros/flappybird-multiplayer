@@ -1,5 +1,6 @@
 const environment = require('./environment')
 const merge = require('webpack-merge');
+const webpack = require('webpack');
 
 module.exports = merge({
   module: {
@@ -14,5 +15,12 @@ module.exports = merge({
         ]
       }
     ]
-  }
+  },
+  plugins:[
+      new webpack.ProvidePlugin({
+          jQuery: 'jquery',
+          $: 'jquery',
+          jquery: 'jquery'
+      })
+  ]
 }, environment.toWebpackConfig())
