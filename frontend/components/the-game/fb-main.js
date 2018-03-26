@@ -44,12 +44,12 @@ window.states = Object.freeze({
 });
 
 // Definição das vars de lógica
-window.currentstate = 0;
+var currentstate = 0;
 var gravity = 0.25;
-window.velocity = 0;
+var velocity = 0;
 var position = 180;
 var rotation = 0;
-window.jump = -4.6;
+var jump = -4.6;
 
 // Definição das vars da pontuação min e máxima
 var score = 0;
@@ -502,4 +502,8 @@ var isIncompatible = {
   }
 };
 
-export { startGame }
+function setVelocity(value){
+  velocity = value
+}
+
+export { startGame, setVelocity, jump, currentstate, states }
