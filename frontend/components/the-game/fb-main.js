@@ -28,6 +28,7 @@ import "./static/sounds/sfx_swooshing.ogg";
 import * as buzz from "./fb-buzz.min.js";
 import * as $ from "./fb-jquery.min.js";
 import "./fb-jquery.transit.min.js";
+import { doJump, setCallback } from "client/flappy_bird";
 
 /* 
    /// DEFININDO AS VARIÁVEIS ////
@@ -261,7 +262,7 @@ else $(document).on("mousedown", screenClick);
 
 function screenClick() {
   if (currentstate == states.GameScreen) {
-    playerJump();
+    doJump();
   } else if (currentstate == states.SplashScreen) {
     startGame();
   }
@@ -513,3 +514,5 @@ var isIncompatible = {
     );
   }
 };
+
+setCallback(playerJump);
