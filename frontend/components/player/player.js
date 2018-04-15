@@ -23,7 +23,7 @@ export default class Player{
   updatePlayer(){
     this.rotation = Math.min(this.velocity / 10 * 90, 90);
 
-    $(this._player()).css({ rotate: this.rotation, top: this.position });
+    $(this._player()).css({ 'transform' : 'rotate('+ this.rotation +'deg)', top: this.position });
   }
 
   doJump(){
