@@ -13,7 +13,7 @@ const flappyBird = createChannel("FlappyBirdChannel", {
       doJumpCallback(data);
     }
     if(data.action === actions.ADDNEWPLAYER){
-      addNewPlayerCallback();
+      addNewPlayerCallback(data.id);
     }
   }
 });
@@ -23,7 +23,6 @@ function doJump(playerId) {
 }
 
 //Callbacks
-
 function setDoJumpCallback(fn){
   doJumpCallback = fn;
 }

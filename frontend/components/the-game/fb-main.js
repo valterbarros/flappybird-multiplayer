@@ -125,8 +125,8 @@ function showSplash() {
   score = 0;
 
   // resetar as posições do player para o novo jogo
-  $("#player").css({ y: 0, x: 0 });
-  updatePlayer($("#player"));
+  $(".js-flappy-player").css({ y: 0, x: 0 });
+  // updatePlayer($(".js-flappy-player"));
 
   soundSwoosh.stop();
   soundSwoosh.play();

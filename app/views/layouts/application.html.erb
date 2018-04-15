@@ -5,33 +5,10 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_pack_tag 'application' %>
-    <meta name="player_id" id="" />
+    <meta name="player_id" id="<%= session[:username] %>" />
   </head>
 
   <body>
-    <!-- // HTML5 -->
-    <main id="main-game"> <!-- Configuração da pag. HTML -->
-      <section id="screen-game"> <!-- Configuração da área do jogo -->            
-        <section id="background-game" class="animated"> <!-- Plano de fundo do jogo -->
-          <section id="flyarea-game"> <!-- Área limite para o jogador -->
-            <div id="ceiling" class="animated"></div> <!-- Blocos/parede do topo -->
-            <div id="bigscore"></div> <!-- Marcação do score no topo -->                  
-            <div id="splash"></div> <!-- Splashscreen - Tela inicial "Get ready" -->                  
-            <div id="scoreboard"> <!-- Quadro de pontuação -->
-              <div id="medal"></div> <!-- Medalha conquistada -->
-              <div id="currentscore"></div> <!-- Pontuação obtida -->
-              <div id="highscore"></div> <!-- Maior pontuação por Cookies -->
-              <div id="replay">
-                <%= image_tag asset_pack_path('components/the-game/static/replay.png'), alt: 'replay' %>
-              </div>
-            </div>                   
-            <!-- Pipes ou Canos, vão aparecendo aqui por meio de um Array -->
-          </section>
-        </section>            
-        <section id="footer-game" class="animated"></section> <!-- Rodapé ou base do jogo -->
-      </section>
-    </main>
-    <!-- // JS & APIs -->
-    <%= javascript_pack_tag 'application' %>
+    <%= yield %>
   </body>
 </html>
