@@ -10,7 +10,7 @@ let doJumpCallback, addNewPlayerCallback;
 const flappyBird = createChannel("FlappyBirdChannel", {
   received(data) {
     if(data.action === actions.DOJUMP){
-      doJumpCallback();
+      doJumpCallback(data);
     }
     if(data.action === actions.ADDNEWPLAYER){
       addNewPlayerCallback();
@@ -18,11 +18,13 @@ const flappyBird = createChannel("FlappyBirdChannel", {
   }
 });
 
-function doJump() {
-  flappyBird.perform("do_jump");
+function doJump(playerId) {
+  flappyBird.perform("do_jump", { playerId });
 }
 
-function setDoJumpCallback(fn) {
+//Callbacks
+
+function setDoJumpCallback(fn){
   doJumpCallback = fn;
 }
 

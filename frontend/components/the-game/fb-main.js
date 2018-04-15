@@ -162,37 +162,24 @@ function startGame() {
 
   // começar os loops do jogo - aumentar o tempo e intervalo de canos
   var updaterate = 1000.0 / 60.0; // 60 fps
-  const player = new Player()
-  console.log(player)
-  loopGameloop = setInterval(gameloop.bind(null, player), updaterate);
+  loopGameloop = setInterval(gameloop, updaterate);
   loopPipeloop = setInterval(updatePipes, 1400);
 
   // ação de pulo para começar o jogo
   playerJump();
 }
 
-// Função para upar a velocidade e a rotação do palyer
-function updatePlayer(player) {
-  // Rotação
-  rotation = Math.min(velocity / 10 * 90, 90);
-
-  // Aplicando a rotação por css (X,Y)
-  $(player).css({ rotate: rotation, top: position });
-}
-
 // Função de Game Loop
-function gameloop(player) {
-  // var player = $("#player");
-
+function gameloop() {
   // Upar a posição e velocidade do player
 
-  player.velocity += gravity;
-  player.position += player.velocity;
-  player.updatePlayer()
+  $('.js-flappy-player').each(function(){
+    console.log(this.self)
+    this.self.incrementVelocity(gravity);
+    this.self.incrementPosition();
+    this.self.updatePlayer();
+  })
 
-  // // Aplicar os novos valores do player
-  // updatePlayer(player);
-  //
   // // Criar o hack de bouding box para o player
   // var box = document.getElementById("player").getBoundingClientRect();
   // var origwidth = 34.0;
