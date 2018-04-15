@@ -26,9 +26,7 @@ function screenClick() {
 
 //Callbacks
 function handleDoJump(data){
-  if (data.player_id == $('[name=player_id]').attr('id')){
-    $(`#${data.player_id}-player`).get(0).self.doJump();
-  }
+  $(`#${data.player_id}-player`).get(0).self.doJump();
 }
 
 setDoJumpCallback(handleDoJump)
