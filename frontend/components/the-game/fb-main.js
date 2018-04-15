@@ -178,7 +178,7 @@ function gameloop() {
     this.self.incrementVelocity(gravity);
     this.self.incrementPosition();
     this.self.updatePlayer();
-  })
+  });
 
   // // Criar o hack de bouding box para o player
   // var box = document.getElementById("player").getBoundingClientRect();
