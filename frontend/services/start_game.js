@@ -3,9 +3,9 @@ import updatePipes from "./update_pipes"
 import "javascripts/fb-jquery.transit.min";
 
 export default function startGame() {
+  console.log(currentstate)
   // variavel para armazenar o estado do jogo e tratar posteriormente os eventos
   currentstate = states.GameScreen;
-
   // fade para a splash screen sumir
   $("#splash").stop();
   $("#splash").transition({ opacity: 0 }, 500, "ease");
@@ -18,5 +18,3 @@ export default function startGame() {
   loopGameloop = setInterval(gameLoop, updaterate);
   loopPipeloop = setInterval(updatePipes, 1400);
 }
-
-startGame()

@@ -1,13 +1,6 @@
 import { setDoJumpCallback, doJump } from "client/flappy_bird";
 import "components/the-game/static/sounds/sfx_wing.ogg";
-import startGame from "../services/game_loop_manager"
-
-import {
-  setVelocity,
-  jump,
-  currentstate,
-  states
-} from "components/the-game/fb-main";
+import startGame from "../services/start_game"
 
 if ("ontouchstart" in window) $(document).on("touchstart", screenClick);
 else $(document).on("mousedown", screenClick);

@@ -2,7 +2,9 @@
 import "init";
 import "./application.css";
 import "consts/game_states.js"
-import "services/game_loop_manager"
+
+import "services/boot_game_manager"
+
 import "components/the-game/fb-main";
 import "actions/add-new-player";
 import "actions/do-jump";

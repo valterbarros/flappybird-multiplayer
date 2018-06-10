@@ -3,7 +3,6 @@ export default function gameLoop() {
   // Upar a posição e velocidade do player
 
   $('.js-flappy-player').each(function(){
-    console.log(this.self)
     this.self.incrementVelocity(gravity);
     this.self.incrementPosition();
     this.self.updatePlayer();

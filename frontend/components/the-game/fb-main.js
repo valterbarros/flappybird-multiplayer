@@ -79,17 +79,18 @@ buzz.all().setVolume(volume);
 // var loopPipeloop;
 
 // Assim que o documento carregar começa a depuração do jogo
-$(document).ready(function() {
-  if (window.location.search == "?debug") debugmode = true;
-  if (window.location.search == "?easy") pipeheight = 200;
+// $(document).ready(function() {
+//   console.log('hello')
+//   if (window.location.search == "?debug") debugmode = true;
+//   if (window.location.search == "?easy") pipeheight = 200;
 
-  // capturar o highscore pelo cookie
-  var savedscore = getCookie("highscore");
-  if (savedscore != "") highscore = parseInt(savedscore);
+//   // capturar o highscore pelo cookie
+//   var savedscore = getCookie("highscore");
+//   if (savedscore != "") highscore = parseInt(savedscore);
 
-  // Começar com a tela inicial
-  showSplash();
-});
+//   // Começar com a tela inicial
+//   showSplash();
+// });
 
 /* 
    /// FUNÇÕES DO JOGO ////
@@ -149,7 +150,6 @@ function showSplash() {
 
 // Função para passar o pulo e o som
 function playerJump() {
-  console.log('jump')
   velocity = jump;
   // iniciar o som com o pulo
   soundJump.stop();
