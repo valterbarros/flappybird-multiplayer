@@ -304,28 +304,28 @@ function showScore() {
   replayclickable = true;
 }
 
-$("#replay").click(function() {
-  // Podemos deixar a ação de replay com clique também
-  if (!replayclickable) return;
-  else replayclickable = false;
-  //SWOOSH!
-  soundSwoosh.stop();
-  soundSwoosh.play();
+// $("#replay").click(function() {
+//   // Podemos deixar a ação de replay com clique também
+//   if (!replayclickable) return;
+//   else replayclickable = false;
+//   //SWOOSH!
+//   soundSwoosh.stop();
+//   soundSwoosh.play();
 
-  // Fade para o quadro de score sumir
-  $("#scoreboard").transition(
-    { y: "-40px", opacity: 0 },
-    1000,
-    "ease",
-    function() {
-      // Esconde o quadro de score
-      $("#scoreboard").css("display", "none");
+//   // Fade para o quadro de score sumir
+//   $("#scoreboard").transition(
+//     { y: "-40px", opacity: 0 },
+//     1000,
+//     "ease",
+//     function() {
+//       // Esconde o quadro de score
+//       $("#scoreboard").css("display", "none");
 
-      // começa o game over e mostra a splash screen
-      showSplash();
-    }
-  );
-});
+//       // começa o game over e mostra a splash screen
+//       showSplash();
+//     }
+//   );
+// });
 
 // Função para armazenar a pontuação do jogador
 function playerScore() {
