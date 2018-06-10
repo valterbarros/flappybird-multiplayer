@@ -1,9 +1,9 @@
-import Player from 'components/player/player'
-import { setAddNewPlayerCallback } from 'client/flappy_bird'
+import Player from "components/player/player";
+import { setAddNewPlayerCallback } from "client/flappy_bird";
 
-function addPlayer(id){
+function addPlayer(id) {
   const player = new Player(id);
-  console.log(player)
+  console.log(player);
   player.render();
   player._player().get(0).self = player;
 }

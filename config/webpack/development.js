@@ -2,6 +2,9 @@ const environment = require('./environment')
 const merge = require('webpack-merge');
 const webpack = require('webpack');
 
+const config = environment.toWebpackConfig();
+config.devtool = 'sourcemap';
+
 module.exports = merge({
   module: {
     rules: [

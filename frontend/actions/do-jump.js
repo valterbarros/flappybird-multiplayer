@@ -1,6 +1,12 @@
-import { setDoJumpCallback, doJump } from 'client/flappy_bird'
+import { setDoJumpCallback, doJump } from "client/flappy_bird";
 import "components/the-game/static/sounds/sfx_wing.ogg";
-import { startGame, setVelocity, jump, currentstate, states } from "components/the-game/fb-main"
+import {
+  startGame,
+  setVelocity,
+  jump,
+  currentstate,
+  states
+} from "components/the-game/fb-main";
 
 if ("ontouchstart" in window) $(document).on("touchstart", screenClick);
 else $(document).on("mousedown", screenClick);
@@ -17,7 +23,7 @@ $(document).keydown(function handleOnScreenClick(e) {
 
 function screenClick() {
   if (currentstate == states.GameScreen) {
-    const playerId = $('[name=player_id]').attr('id')
+    const playerId = $("[name=player_id]").attr("id");
     doJump(playerId);
   } else if (currentstate == states.SplashScreen) {
     startGame();
@@ -25,8 +31,10 @@ function screenClick() {
 }
 
 //Callbacks
-function handleDoJump(data){
-  $(`#${data.player_id}-player`).get(0).self.doJump();
+function handleDoJump(data) {
+  $(`#${data.player_id}-player`)
+    .get(0)
+    .self.doJump();
 }
 
-setDoJumpCallback(handleDoJump)
+setDoJumpCallback(handleDoJump);
