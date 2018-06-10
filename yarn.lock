@@ -1318,6 +1318,10 @@ builtin-status-codes@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/builtin-status-codes/-/builtin-status-codes-3.0.0.tgz#85982878e21b98e1c66425e03d0174788f569ee8"
 
+buzz@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/buzz/-/buzz-1.2.1.tgz#09c75e159e3106d672aba383822a3265106f8294"
+
 bytes@3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/bytes/-/bytes-3.0.0.tgz#d32815404d689699f85a4ea4fa8755dd13a96048"
@@ -4278,6 +4282,16 @@ jest-validate@^21.1.0:
     jest-get-type "^21.2.0"
     leven "^2.1.0"
     pretty-format "^21.2.1"
+
+jquery.transit@0.9.9:
+  version "0.9.9"
+  resolved "https://registry.yarnpkg.com/jquery.transit/-/jquery.transit-0.9.9.tgz#af9fa3d02b1b407d5edd1678c843c0e57bd1787a"
+  dependencies:
+    jquery2 "~2.0.2"
+
+jquery2@~2.0.2:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/jquery2/-/jquery2-2.0.3.tgz#398787ddcd2fcc00224c3758f2559ea5e1d0cb71"
 
 jquery@^3.3.1:
   version "3.3.1"

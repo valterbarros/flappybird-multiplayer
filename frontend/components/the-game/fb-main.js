@@ -25,10 +25,11 @@ import "./static/sounds/sfx_point.ogg";
 import "./static/sounds/sfx_hit.ogg";
 import "./static/sounds/sfx_die.ogg";
 import "./static/sounds/sfx_swooshing.ogg";
-import * as buzz from "./fb-buzz.min.js";
-import * as $ from "./fb-jquery.min.js";
-import "./fb-jquery.transit.min.js";
+import * as buzz from "buzz/dist/buzz.min";
+import "javascripts/fb-jquery.transit.min";
 import Player from 'components/player/player'
+
+window.$ = jQuery
 
 /* 
    /// DEFININDO AS VARIÁVEIS ////

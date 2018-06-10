@@ -8,7 +8,9 @@
   "dependencies": {
     "@rails/webpacker": "^3.3.0",
     "actioncable": "^5.1.5",
+    "buzz": "^1.2.1",
     "jquery": "^3.3.1",
+    "jquery.transit": "0.9.9",
     "normalize.css": "^7.0.0",
     "postcss-nested": "^3.0.0"
   },
@@ -30,7 +32,8 @@
     "webpack-merge": "^4.1.2"
   },
   "scripts": {
-    "lint-staged": "$(yarn bin)/lint-staged"
+    "lint-staged": "$(yarn bin)/lint-staged",
+    "dev": "webpack --watch --progress --config config/webpack/development.js"
   },
   "lint-staged": {
     "config/webpack/**/*.js": [
