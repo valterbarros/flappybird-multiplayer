@@ -1,7 +1,8 @@
 import gameLoop from "./game_loop"
+import updatePipes from "./update_pipes"
 import "javascripts/fb-jquery.transit.min";
 
-(function startGame() {
+export default function startGame() {
   // variavel para armazenar o estado do jogo e tratar posteriormente os eventos
   currentstate = states.GameScreen;
 
@@ -15,5 +16,7 @@ import "javascripts/fb-jquery.transit.min";
   // começar os loops do jogo - aumentar o tempo e intervalo de canos
   var updaterate = 1000.0 / 60.0; // 60 fps
   loopGameloop = setInterval(gameLoop, updaterate);
-  //loopPipeloop = setInterval(updatePipes, 1400);
-})(gameLoop)
+  loopPipeloop = setInterval(updatePipes, 1400);
+}
+
+startGame()

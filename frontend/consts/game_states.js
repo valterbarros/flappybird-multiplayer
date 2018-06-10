@@ -6,6 +6,10 @@ window.score = 0;
 window.highscore = 0;
 window.gravity = 0.25;
 
+window.pipeheight = 90;
+window.pipewidth = 52;
+window.pipes = new Array();
+
 window.states = Object.freeze({
   SplashScreen: 0,
   GameScreen: 1,

@@ -1,7 +1,8 @@
 import { setDoJumpCallback, doJump } from "client/flappy_bird";
 import "components/the-game/static/sounds/sfx_wing.ogg";
+import startGame from "../services/game_loop_manager"
+
 import {
-  startGame,
   setVelocity,
   jump,
   currentstate,
