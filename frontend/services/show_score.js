@@ -2,8 +2,8 @@ import "javascripts/fb-jquery.transit.min";
 import setBigScore from "./set_big_score"
 import setHighScore from "./set_high_score"
 import setSmallScore from "./set_small_score"
-import * as buzz from "buzz/dist/buzz.min";
 import setMedal from "./set_medal"
+import * as buzz from "buzz/dist/buzz.min";
 var soundSwoosh = new buzz.sound(require("../components/the-game/static/sounds/sfx_swooshing.ogg"));
 
 // Função para mostrar o score
