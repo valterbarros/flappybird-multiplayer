@@ -1,6 +1,15 @@
 import playerDead from "./player_dead"
 import playerScore from "./player_score"
 
+function playerTouchFooter(box) {
+  return box.bottom >= $("#footer-game").offset().top
+}
+
+function playerTouchTop(boxtop) {
+  const ceiling = $("#ceiling")
+  return boxtop <= ceiling.offset().top + ceiling.height()
+}
+
 // Função de Game Loop
 export default function gameLoop() {
   // Upar a posição e velocidade do player
@@ -23,15 +32,13 @@ export default function gameLoop() {
     const boxright = boxleft + boxwidth
     const boxbottom = boxtop + boxheight
 
-    // Se acertar o footer, o player morre e retorna o jogo
-    if (box.bottom >= $("#footer-game").offset().top) {
+    if (playerTouchFooter(box)) {
       playerDead(this)
     }
 
-    // Se tentar passar pelo topo, zera a posição dele no topo
-    const ceiling = $("#ceiling")
-    if (boxtop <= ceiling.offset().top + ceiling.height())
+    if (playerTouchTop(boxtop)){
       this.self.position = 0
+    }
 
     // Se não houver nenhum cano no jogo retorna
     if (pipes[0] == null) return
