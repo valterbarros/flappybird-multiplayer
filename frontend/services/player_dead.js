@@ -1,8 +1,14 @@
 import * as buzz from "buzz/dist/buzz.min";
-var soundHit = new buzz.sound(require("../components/the-game/static/sounds/sfx_hit.ogg"));
-var soundDie = new buzz.sound(require("../components/the-game/static/sounds/sfx_die.ogg"));
-import { isIncompatible } from "../utils/is_incompatible"
-import showScore from "./show_score"
+import soundHit from "../components/the-game/static/sounds/sfx_hit.ogg";
+
+const soundHit = new buzz.sound(
+  require("../components/the-game/static/sounds/sfx_hit.ogg")
+);
+const soundDie = new buzz.sound(
+  require("../components/the-game/static/sounds/sfx_die.ogg")
+);
+import { isIncompatible } from "../utils/is_incompatible";
+import showScore from "./show_score";
 
 // Função para quando o player morrer
 export default function playerDead(player) {
@@ -14,11 +20,7 @@ export default function playerDead(player) {
   var playerbottom = $(player).position().top + $(player).width(); // Usamos porque ele irá rotacionar 90º
   var floor = $("#flyarea-game").height();
   var movey = Math.max(0, floor - playerbottom);
-  $(player).transition(
-    { y: movey + "px", rotate: 90 },
-    1000,
-    "easeInOutCubic"
-  );
+  $(player).transition({ y: movey + "px", rotate: 90 }, 1000, "easeInOutCubic");
 
   // Este é o tempo para mudar os estados. Vamos considerar a scorescreen para desabilitar o click/jump
   currentstate = states.ScoreScreen;

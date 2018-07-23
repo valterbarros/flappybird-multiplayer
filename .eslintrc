@@ -6,9 +6,18 @@
   "env": {
     "browser": true
   },
+  
+  "globals": {
+    "$": true,
+    "replayclickable": true,
+    "highscore": true,
+    "score": true
+  },
 
   "rules": {
-    "prettier/prettier": "error"
+    "semi": 0,
+    "import/no-unresolved": 0,
+    "new-cap": 0
   },
 
   "parser": "babel-eslint",
