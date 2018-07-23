@@ -1,4 +1,4 @@
-import "vendor/javascripts/fb-jquery.transit.min"
+import "javascripts/fb-jquery.transit.min"
 import * as Buzz from "buzz/dist/buzz.min"
 import setBigScore from "./set_big_score"
 import setHighScore from "./set_high_score"
@@ -41,7 +41,7 @@ export default function showScore() {
   soundSwoosh.play()
 
   // Mostra o quadro de score
-  $("#scoreboard").css({ y: "40px", opacity: 0 }) // Move o quadro de score para biaxo
+  $("#scoreboard").css({ y: "40px", opacity: 0 }) // Move o quadro de score para baixo
   $("#replay").css({ y: "40px", opacity: 0 })
   $("#scoreboard").transition({ y: "0px", opacity: 1 }, 600, "ease", () => {
     // Quando a animação terminar começa o som de SWOOSH!
@@ -49,7 +49,7 @@ export default function showScore() {
     soundSwoosh.play()
     $("#replay").transition({ y: "0px", opacity: 1 }, 600, "ease")
 
-    // também animal a medalha para aparecer no quadro de score
+    // também anima a medalha para aparecer no quadro de score
     if (wonmedal) {
       $("#medal").css({ scale: 2, opacity: 0 })
       $("#medal").transition({ opacity: 1, scale: 1 }, 1200, "ease")

@@ -4,7 +4,7 @@ import playerDead from "./player_dead"
 export default function gameLoop() {
   // Upar a posição e velocidade do player
 
-  $('.js-flappy-player').each(() => {
+  $('.js-flappy-player').each(function flappyBirdGameLoop() {
     this.self.incrementVelocity(gravity);
     this.self.incrementPosition();
     this.self.updatePlayer();

@@ -1,22 +1,30 @@
+/* eslint prefer-arrow-callback: 0 */
+/* eslint global-require: 0 */
+
 import "javascripts/fb-jquery.transit.min"
+import * as buzz from "buzz/dist/buzz.min"
+
+const soundSwoosh = new buzz.sound(
+  require("../components/the-game/static/sounds/sfx_swooshing.ogg")
+)
 
 export default function showSplash() {
   // variavel para armazenar o estado do jogo e tratar posteriormente os eventos
   currentstate = states.SplashScreen
 
-  // setar os valores iniciais
-  // velocity = 0;
-  // position = 180;
-  // rotation = 0;
-  // score = 0;
-
   // resetar as posições do player para o novo jogo
   $(".js-flappy-player").css({ y: 0, x: 0 })
-  // updatePlayer($(".js-flappy-player"));
+  
+  $(".js-flappy-player").each(function flappyBirdReset(){
+    // setar os valores iniciais
+    this.self.velocity = 0
+    this.self.position = 180
+    this.self.updatePlayer()
+  })
 
   // resetar sons
-  // soundSwoosh.stop();
-  // soundSwoosh.play();
+  soundSwoosh.stop();
+  soundSwoosh.play();
 
   // limpar todos os canos para iniciar o novo jogo
   $(".pipe").remove()

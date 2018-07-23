@@ -1,7 +1,7 @@
 /* eslint global-require: 0 */
 /* eslint import/first: 0 */
 
-import showSplash from "../services/show_score"
+import showSplash from "../services/show_splash_screen"
 import * as buzz from "buzz/dist/buzz.min"
 import "javascripts/fb-jquery.transit.min"
 
