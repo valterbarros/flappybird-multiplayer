@@ -1,4 +1,6 @@
 /* global $ */
+/* eslint global-require: 0 */
+/* eslint no-underscore-dangle: 0 */
 
 import * as buzz from "buzz/dist/buzz.min";
 

@@ -1,10 +1,11 @@
-import Player from "components/player/player";
-import { setAddNewPlayerCallback } from "client/flappy_bird";
+/* eslint no-underscore-dangle: 0 */
+import Player from "components/player/player"
+import { setAddNewPlayerCallback } from "client/flappy_bird"
 
 function addPlayer(id) {
-  const player = new Player(id);
-  player.render();
-  player._player().get(0).self = player;
+  const player = new Player(id)
+  player.render()
+  player._player().get(0).self = player
 }
 
-setAddNewPlayerCallback(addPlayer);
+setAddNewPlayerCallback(addPlayer)

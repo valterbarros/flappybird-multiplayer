@@ -1,7 +1,7 @@
 import * as buzz from "buzz/dist/buzz.min"
 import soundHitOgg from "../components/the-game/static/sounds/sfx_hit.ogg"
 import sfxDieOgg from "../components/the-game/static/sounds/sfx_die.ogg"
-import { isIncompatible } from "../utils/is_incompatible"
+import isIncompatible from "../utils/is_incompatible"
 import showScore from "./show_score"
 
 const soundHit = new buzz.sound(soundHitOgg)

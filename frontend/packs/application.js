@@ -1,7 +1,9 @@
+/* eslint import/first: 0 */
+
 // frontend/packs/application.js
 import "init";
 import "./application.css";
-import "consts/game_states.js"
+import "consts/game_states"
 
 import "services/boot_game_manager"
 import "../actions/click_on_replay_button"
