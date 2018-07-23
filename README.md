@@ -3,5 +3,18 @@ I wanted test the channels functionality from rails in some project and I get th
 
 Add other things is yet necessary like login system, etc.
 
+# Structure
+All css and js code lives in frontend path, the copile is made with webpack using webpacker gem to facilite my life.
+
+# To run you will need
+``` bash
+  # open a tab in terminal and run webpack compile
+  npm run dev
+```
+``` bash
+  # open other tab in terminal and run rails server
+  rails s
+```
+
 # Real screens from project
 ![](https://trello-attachments.s3.amazonaws.com/5b5523894f83f86d1d846475/5b5523894f83f86d1d846493/4ab8d3169fd21dce781ba3da13b83673/image.png)
