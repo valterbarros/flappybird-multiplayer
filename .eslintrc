@@ -11,13 +11,22 @@
     "$": true,
     "replayclickable": true,
     "highscore": true,
-    "score": true
+    "score": true,
+    "gravity": true,
+    "currentstate": true,
+    "states": true,
+    "loopGameloop": true,
+    "loopPipeloop": true,
+    "require": true,
+    "pipes": true,
+    "pipeheight": true
   },
 
   "rules": {
     "semi": 0,
     "import/no-unresolved": 0,
-    "new-cap": 0
+    "new-cap": 0,
+    "import/no-dynamic-require": 0
   },
 
   "parser": "babel-eslint",

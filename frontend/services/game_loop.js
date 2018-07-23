@@ -4,28 +4,26 @@ import playerDead from "./player_dead"
 export default function gameLoop() {
   // Upar a posição e velocidade do player
 
-  $('.js-flappy-player').each(function(){
+  $('.js-flappy-player').each(() => {
     this.self.incrementVelocity(gravity);
     this.self.incrementPosition();
     this.self.updatePlayer();
 
     // // Criar o hack de bouding box para o player
-    var box = this.getBoundingClientRect();
-    var origwidth = 34.0;
-    var origheight = 24.0;
+    const box = this.getBoundingClientRect();
+    const origwidth = 34.0;
+    const origheight = 24.0;
     
-    //console.log(this);
-    var boxwidth = origwidth - Math.sin(Math.abs(this.self.rotation) / 90) * 8;
-    var boxheight = origheight - Math.sin(Math.abs(this.self.rotation) / 90) * 8;
-    var boxleft = (box.width - boxwidth) / 2 + box.left;
-    var boxtop = (box.height - boxheight) / 2 + box.top;
-    var boxright = boxleft + boxwidth;
-    var boxbottom = boxtop + boxheight;
+    const boxwidth = origwidth - Math.sin(Math.abs(this.self.rotation) / 90) * 8;
+    const boxheight = origheight - Math.sin(Math.abs(this.self.rotation) / 90) * 8;
+    const boxleft = (box.width - boxwidth) / 2 + box.left;
+    const boxtop = (box.height - boxheight) / 2 + box.top;
+    let boxright = boxleft + boxwidth;
+    let boxbottom = boxtop + boxheight;
     
     // Se acertar o footer, o player morre e retorna o jogo
     if (box.bottom >= $("#footer-game").offset().top) {
       playerDead(this);
-      return;
     }
     
     // // Se tentar passar pelo topo, zera a posição dele no topo
