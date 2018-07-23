@@ -11,7 +11,10 @@ const soundSwoosh = new buzz.sound(
 export default function showSplash() {
   // variavel para armazenar o estado do jogo e tratar posteriormente os eventos
   currentstate = states.SplashScreen
-
+  
+  // clear bigscore
+  score = 0
+  
   // resetar as posições do player para o novo jogo
   $(".js-flappy-player").css({ y: 0, x: 0 })
   
