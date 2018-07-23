@@ -19,7 +19,8 @@
     "loopPipeloop": true,
     "require": true,
     "pipes": true,
-    "pipeheight": true
+    "pipeheight": true,
+    "pipewidth": true
   },
 
   "rules": {

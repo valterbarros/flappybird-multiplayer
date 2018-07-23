@@ -9,8 +9,8 @@ import sfxSwooshing from "../components/the-game/static/sounds/sfx_swooshing.ogg
 const soundSwoosh = new Buzz.sound(sfxSwooshing)
 // Função para setar o cookie por nome, valor e tempo para expirar
 function setCookie(cname, cvalue, exdays) {
-  const d = new Date();
-  d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
+  const d = new Date()
+  d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000)
   const expires = `expires=${d.toGMTString()}`
   document.cookie = `${cname}=${cvalue}; ${expires}`
 }
