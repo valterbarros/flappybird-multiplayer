@@ -4,7 +4,7 @@ I wanted test the channels functionality from rails in some project and I get th
 Add other things is yet necessary like login system, etc.
 
 # Structure
-All css and js code lives in frontend path, the copile is made with webpack using webpacker gem to facilite my life.
+All css and js code lives in frontend path, the compile is made with webpack using webpacker gem to facilite my life.
 
 # To run you will need
 ``` bash
