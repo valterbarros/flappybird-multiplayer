@@ -8,6 +8,11 @@ All css and js code lives in frontend path, the compile is made with webpack usi
 
 # To run you will need
 ``` bash
+  # install dependencies
+  yarn
+  bundle install
+```
+``` bash
   # open a tab in terminal and run webpack compile
   npm run dev
 ```
