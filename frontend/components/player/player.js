@@ -9,8 +9,10 @@ export default class Player {
     this.id = id
     this.rotation = 0
     this.velocity = 0
+    this.old_position = 0
     this.position = 180
     this.rendered = false
+    this.new_velocity = 0
     this.jump = -4.6
     this.soundJump = new buzz.sound(
       require("components/the-game/static/sounds/sfx_wing.ogg")
@@ -28,7 +30,16 @@ export default class Player {
   }
 
   updatePlayer() {
-    this.rotation = Math.min(this.velocity / 10 * 90, 90)
+    let velocity = 0
+    velocity += this.position - this.old_position
+    const sigmoid = velocity / (1 + Math.abs(velocity))
+    
+    this.rotation = Math.min((this.rotation * 0.9) + (sigmoid * 6), 90)
+
+    console.log('sigmoid', Math.min((this.rotation * 0.9) + (sigmoid * 6), 90))
+    console.log('oldimplement', Math.min(this.velocity / 10 * 90, 90))
+
+    // this.rotation = Math.min(this.velocity / 10 * 90, 90)
 
     $(this._player()).css({
       transform: `rotate(${this.rotation}deg)`,
@@ -47,6 +58,8 @@ export default class Player {
   }
 
   incrementPosition() {
+    this.old_position = this.position
+
     this.position += this.velocity
   }
 
